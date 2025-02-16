@@ -32,6 +32,7 @@ function adicionarItemNaLista(nome, quantidade = 1, pego = false) {
         <div class="item-info">
             <span>${nome}</span>
             <input type="number" value="${quantidade}" min="1">
+            <span class="checkmark">✔️</span> <!-- Ícone de checkmark -->
         </div>
         <button class="${pego ? 'pego' : 'nao-pego'}" onclick="marcarComoPego(this)">Já Peguei</button>
         <button onclick="removerItem(this)">Remover</button>
@@ -46,7 +47,8 @@ function marcarComoPego(button) {
     item.classList.toggle('pego'); // Alterna a classe "pego"
     button.classList.toggle('pego'); // Alterna a classe do botão
     button.classList.toggle('nao-pego'); // Alterna a classe do botão
-    button.textContent = item.classList.contains('pego') ? "Já Peguei" : "Já Peguei"; // Mantém o texto do botão
+    const checkmark = item.querySelector('.checkmark');
+    checkmark.style.display = item.classList.contains('pego') ? 'inline' : 'none'; // Mostra ou oculta o ícone
     salvarLista(); // Salva a lista após marcar o item
 }
 

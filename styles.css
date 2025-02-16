@@ -63,7 +63,7 @@ input {
 
 button {
     color: #000000;
-    background-color: rgb(255, 0, 0); /* Vermelho */
+    background-color: #ff0000;
     border: none;
     border-radius: 8px;
     padding: 8px 16px;
@@ -92,12 +92,12 @@ button:active {
 
 /* Estilo para o botão "Já Peguei" quando o item NÃO foi pego */
 button.nao-pego {
-    background-color: rgb(255, 134, 0); /* Laranja */
+    background-color: #ff8700; /* Laranja */
     color: white;
 }
 
 button.nao-pego:hover {
-    background-color: rgb(255, 134, 0); /* Laranja */
+    background-color: #ff8700; /* Laranja */
 }
 
 /* Estilo para o botão "Já Peguei" quando o item FOI pego */
@@ -112,6 +112,18 @@ button.pego:hover {
 
 /* Estilo para itens marcados como "já peguei" */
 li.pego {
-    opacity: 0.7; /* Reduz a opacidade */
+    opacity: 0.6; /* Reduz a opacidade */
     text-decoration: line-through; /* Risca o texto */
+}
+
+/* Ícone de checkmark (✔️) */
+.checkmark {
+    margin-left: 10px;
+    color: #28a745; /* Verde */
+    font-size: 1.2rem;
+    display: none; /* Inicialmente oculto */
+}
+
+li.pego .checkmark {
+    display: inline; /* Mostra o ícone quando o item é marcado como "já peguei" */
 }
