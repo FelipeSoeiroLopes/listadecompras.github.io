@@ -1,8 +1,8 @@
-## Lista De Compras - Versão 5
+# Lista De Compras - Versão 6
 
 Uma lista de compras interativa e responsiva, desenvolvida com **HTML**, **CSS** e **JavaScript**. Permite adicionar, remover e salvar itens localmente, utilizando o `localStorage` do navegador. Ideal para organizar suas compras de forma simples e eficiente.
 
-### Funcionalidades
+## Funcionalidades
 
 - **Adicionar itens**: Adicione novos itens à lista com um simples clique.
 - **Remover itens**: Remova itens indesejados com um botão de exclusão.
@@ -11,7 +11,22 @@ Uma lista de compras interativa e responsiva, desenvolvida com **HTML**, **CSS**
 - **Salvamento automático**: Os itens são salvos automaticamente no `localStorage`, permanecendo disponíveis mesmo após fechar o navegador.
 - **Design responsivo**: A responsividade do site foi aprimorada, garantindo uma melhor experiência em dispositivos móveis e desktops.
 
-### Como Usar
+## Novidades na Versão 6
+
+- **Centralização e Uniformização dos Botões em Dispositivos Móveis**:
+  - Centralização dos botões: Em dispositivos menores (telas com até 600px de largura), os botões foram centralizados para melhorar a usabilidade e a aparência.
+  - Tamanho igual para todos os botões: Todos os botões agora têm o mesmo tamanho em dispositivos móveis, garantindo consistência visual.
+  - Melhoria no layout: Os itens da lista foram reorganizados em colunas para dispositivos móveis, com os botões ocupando a largura total e alinhados ao centro.
+
+- **Melhorias no Código CSS**:
+  - Ajustes na responsividade:
+    - Os botões agora têm um `max-width: 200px` e ocupam 100% da largura disponível em dispositivos móveis.
+    - O texto dentro dos botões foi centralizado com `text-align: center`.
+    - O padding dos botões foi aumentado para 10px, melhorando a aparência e a usabilidade em telas menores.
+  - Centralização dos itens:
+    - Os itens da lista (`li`) e os elementos internos (como `.item-info`) foram centralizados com `align-items: center`.
+
+## Como Usar
 
 1. **Adicionar um item**:
    - Clique no botão **"Adicionar Item"**.
@@ -27,13 +42,13 @@ Uma lista de compras interativa e responsiva, desenvolvida com **HTML**, **CSS**
 4. **Salvamento automático**:
    - Os itens são salvos automaticamente no `localStorage`. Mesmo que você feche o navegador, eles permanecerão na lista.
 
-### Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **HTML**: Estrutura da página.
 - **CSS**: Estilização e design responsivo.
 - **JavaScript**: Lógica de interação e manipulação do `localStorage`.
 
-### Como Executar o Projeto
+## Como Executar o Projeto
 
 1. Clone o repositório:
    ```bash
