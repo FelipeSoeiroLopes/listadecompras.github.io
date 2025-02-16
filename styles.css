@@ -92,12 +92,12 @@ button:active {
 
 /* Estilo para o botão "Já Peguei" quando o item NÃO foi pego */
 button.nao-pego {
-    background-color: rgb(255, 136, 0); /* Laranja */
+    background-color: rgb(255, 135, 0); /* Laranja */
     color: white;
 }
 
 button.nao-pego:hover {
-    background-color: rgb(255, 136, 0); /* Laranja */
+    background-color: rgb(255, 135, 0); /* Laranja */
 }
 
 /* Estilo para o botão "Já Peguei" quando o item FOI pego */
