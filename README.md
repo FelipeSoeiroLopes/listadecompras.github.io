@@ -1,4 +1,4 @@
-## Lista De Compras - Versão 4
+## Lista De Compras - Versão 5
 
 Uma lista de compras interativa e responsiva, desenvolvida com **HTML**, **CSS** e **JavaScript**. Permite adicionar, remover e salvar itens localmente, utilizando o `localStorage` do navegador. Ideal para organizar suas compras de forma simples e eficiente.
 
@@ -9,7 +9,7 @@ Uma lista de compras interativa e responsiva, desenvolvida com **HTML**, **CSS**
 - **Ícone de Checkmark (✔️)**: Quando um item é marcado como "já peguei", um ícone de checkmark (✔️) aparece ao lado do nome do item, fornecendo um feedback visual claro de que o item foi coletado.
 - **Melhorias Visuais**: O botão "Já Peguei" muda de laranja (não pego) para verde (já peguei). Itens marcados como "já peguei" têm o texto riscado e opacidade reduzida.
 - **Salvamento automático**: Os itens são salvos automaticamente no `localStorage`, permanecendo disponíveis mesmo após fechar o navegador.
-- **Design responsivo**: Funciona bem em dispositivos móveis e desktops.
+- **Design responsivo**: A responsividade do site foi aprimorada, garantindo uma melhor experiência em dispositivos móveis e desktops.
 
 ### Como Usar
 

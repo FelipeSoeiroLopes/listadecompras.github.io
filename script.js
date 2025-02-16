@@ -68,4 +68,4 @@ document.getElementById('adicionarItem').addEventListener('click', function() {
 });
 
 // Carrega a lista salva ao abrir a página
-carregarLista();
+carregarLista(); 
