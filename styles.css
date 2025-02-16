@@ -62,8 +62,8 @@ input {
 }
 
 button {
-    background-color: #ff4d4d;
-    color: white;
+    color: #000000;
+    background-color: rgb(255, 0, 0); /* Vermelho */
     border: none;
     border-radius: 8px;
     padding: 8px 16px;
@@ -73,7 +73,6 @@ button {
 }
 
 button:hover {
-    background-color: #ff1a1a;
     transform: scale(1.05);
 }
 
@@ -83,9 +82,36 @@ button:active {
 
 #adicionarItem {
     background-color: #28a745;
+    color: white;
     margin-top: 20px;
 }
 
 #adicionarItem:hover {
     background-color: #218838;
+}
+
+/* Estilo para o botão "Já Peguei" quando o item NÃO foi pego */
+button.nao-pego {
+    background-color: rgb(255, 136, 0); /* Laranja */
+    color: white;
+}
+
+button.nao-pego:hover {
+    background-color: rgb(255, 136, 0); /* Laranja */
+}
+
+/* Estilo para o botão "Já Peguei" quando o item FOI pego */
+button.pego {
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+
+button.pego:hover {
+    background-color: #218838; /* Verde mais escuro */
+}
+
+/* Estilo para itens marcados como "já peguei" */
+li.pego {
+    opacity: 0.7; /* Reduz a opacidade */
+    text-decoration: line-through; /* Risca o texto */
 }
