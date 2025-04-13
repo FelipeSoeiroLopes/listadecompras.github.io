@@ -151,3 +151,4 @@ document.getElementById('adicionarItem').addEventListener('click', function() {
     }
 });
 carregarLista();
+ 
