@@ -1,4 +1,4 @@
-# Lista De Compras - Versão 7
+# Lista De Compras - Versão 8
 
 Uma lista de compras interativa e responsiva, desenvolvida com **HTML**, **CSS** e **JavaScript**. Permite adicionar, remover (com confirmação) e salvar itens localmente, utilizando o `localStorage` do navegador. Ideal para organizar suas compras de forma simples e eficiente.
 
@@ -18,7 +18,7 @@ Você pode acessar e usar a versão online da lista de compras diretamente no se
 - **Salvamento automático**: Os itens são salvos automaticamente no `localStorage`, permanecendo disponíveis mesmo após fechar o navegador.
 - **Design responsivo**: A responsividade do site foi aprimorada, garantindo uma boa experiência em dispositivos móveis e desktops.
 
-## Novidades na Versão 7
+## Novidades na Versão 8
 
 - **Confirmação ao Remover**: Implementada uma caixa de diálogo (`window.confirm`) que solicita a confirmação do usuário antes de remover um item da lista, prevenindo exclusões acidentais.
 - **Indicador de Status no Item**: Adicionada uma borda colorida (`border-left`) diretamente no elemento do item (`<li>`). A borda é vermelha por padrão (indicando "não pego") e muda para verde quando o item é marcado como "pego", oferecendo um feedback visual imediato sobre o estado de cada item.
