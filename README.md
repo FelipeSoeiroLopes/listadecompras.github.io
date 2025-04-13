@@ -1,4 +1,4 @@
-# Lista De Compras - Versão 8
+# Lista De Compras - Versão 9
 
 Uma lista de compras interativa e responsiva, desenvolvida com **HTML**, **CSS** e **JavaScript**. Permite adicionar, remover (com confirmação) e salvar itens localmente, utilizando o `localStorage` do navegador. Ideal para organizar suas compras de forma simples e eficiente.
 
@@ -17,6 +17,20 @@ Você pode acessar e usar a versão online da lista de compras diretamente no se
 - **Melhorias Visuais**: O botão de status muda de cor e texto ("Não Pego" / "Pego"). Itens marcados como "pego" têm o texto riscado, opacidade reduzida e a borda do item fica verde.
 - **Salvamento automático**: Os itens são salvos automaticamente no `localStorage`, permanecendo disponíveis mesmo após fechar o navegador.
 - **Design responsivo**: A responsividade do site foi aprimorada, garantindo uma boa experiência em dispositivos móveis e desktops.
+- **Cálculo automático do valor total**: O valor total da compra é calculado automaticamente sempre que o preço ou a quantidade de um item é alterado.
+- **Zerar valor total ao remover todos os itens**: Quando todos os itens são removidos, o valor total é automaticamente zerado.
+
+## Novidades na Versão 9
+
+- **Texto em Maiúsculas**: Agora, todos os itens adicionados à lista são automaticamente convertidos para letras maiúsculas, garantindo uniformidade visual.
+- **Ajuste no Tamanho da Fonte**: O tamanho da fonte dos itens foi aumentado, tanto em dispositivos maiores quanto menores, para melhorar a legibilidade.
+- **Cálculo Automático do Valor Total**:
+  - Adicionado um campo para o preço de cada item.
+  - O valor total da compra é calculado automaticamente sempre que o preço ou a quantidade de um item é alterado.
+- **Zerar Valor Total ao Remover Todos os Itens**: Quando todos os itens são removidos, o valor total é automaticamente atualizado para `R$ 0,00`.
+- **Melhorias na Responsividade**:
+  - Em dispositivos menores, o tamanho da fonte dos itens foi ajustado para garantir uma boa experiência de leitura.
+  - Ajustes adicionais no layout para melhorar a usabilidade em telas pequenas.
 
 ## Novidades na Versão 8
 
@@ -46,21 +60,25 @@ Você pode acessar e usar a versão online da lista de compras diretamente no se
     *   Clique no botão **"Adicionar Item"**.
     *   Digite o nome do item no prompt que aparecer e clique em "OK".
     *   O item será adicionado à lista com uma borda vermelha à esquerda.
-3.  **Marcar um item como "pego"**:
+3.  **Definir preço e quantidade**:
+    *   Insira o preço e a quantidade de cada item nos campos correspondentes.
+    *   O valor total será calculado automaticamente.
+4.  **Marcar um item como "pego"**:
     *   Clique no botão **"Não Pego"** (ou **"Pego"** para desmarcar) ao lado do item.
     *   O botão mudará de cor e texto, a borda do item ficará verde, o texto será riscado e um ícone de checkmark (✔️) aparecerá.
-4.  **Remover um item**:
+5.  **Remover um item**:
     *   Clique no botão **"Remover"** ao lado do item que deseja excluir.
     *   Uma caixa de diálogo perguntará "Tem certeza que deseja remover este item?".
     *   Clique em **"OK"** para confirmar a remoção ou em "Cancelar".
-5.  **Salvamento automático**:
+    *   Se todos os itens forem removidos, o valor total será zerado automaticamente.
+6.  **Salvamento automático**:
     *   Os itens são salvos automaticamente no `localStorage` do seu navegador. Mesmo que você feche a aba ou o navegador, eles permanecerão na lista quando você reabrir a página no mesmo navegador.
 
 ## Tecnologias Utilizadas
 
 - **HTML**: Estrutura da página.
 - **CSS**: Estilização, design responsivo e indicadores visuais.
-- **JavaScript**: Lógica de interação, manipulação do DOM, confirmações e manipulação do `localStorage`.
+- **JavaScript**: Lógica de interação, manipulação do DOM, confirmações, cálculo do valor total e manipulação do `localStorage`.
 
 ## Como Executar o Projeto Localmente (Opcional)
 
@@ -73,5 +91,4 @@ Se você quiser rodar o projeto no seu próprio computador:
     ```
 2.  Abra o arquivo `index.html` diretamente no seu navegador.
 
- 
- 
+

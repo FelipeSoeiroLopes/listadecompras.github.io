@@ -6,14 +6,17 @@ function salvarLista() {
         // Seleciona o span que contém o nome (idealmente com uma classe como .item-name)
         const nomeElement = li.querySelector('.item-info span:not(.checkmark)');
         // Seleciona o input de quantidade (idealmente com uma classe como .item-quantity)
-        const quantidadeElement = li.querySelector('.item-info input[type="number"]');
+        const quantidadeElement = li.querySelector('.item-info input.item-quantity');
+        // Seleciona o input de preço (idealmente com uma classe como .item-price)
+        const precoElement = li.querySelector('.item-info input.item-price');
 
         // Verifica se os elementos foram encontrados antes de acessar suas propriedades
-        if (nomeElement && quantidadeElement) {
+        if (nomeElement && quantidadeElement && precoElement) {
             const nome = nomeElement.textContent;
             const quantidade = quantidadeElement.value;
+            const preco = precoElement.value;
             const pego = li.classList.contains('pego'); // Verifica se o item foi pego
-            itens.push({ nome, quantidade, pego });
+            itens.push({ nome, quantidade, preco, pego });
         } else {
             console.warn("Item da lista com estrutura inesperada foi ignorado ao salvar:", li);
         }
@@ -30,23 +33,21 @@ function carregarLista() {
             // Limpa a lista atual antes de carregar (evita duplicatas se chamada novamente)
             document.getElementById('listaCompras').innerHTML = '';
             itens.forEach(item => {
-                // Garante que nome e quantidade existam
-                if (item.nome !== undefined && item.quantidade !== undefined) {
-                    adicionarItemNaLista(item.nome, item.quantidade, item.pego);
+                // Garante que nome, quantidade e preço existam
+                if (item.nome !== undefined && item.quantidade !== undefined && item.preco !== undefined) {
+                    adicionarItemNaLista(item.nome, item.quantidade, item.pego, item.preco);
                 } else {
                     console.warn("Item inválido encontrado no localStorage:", item);
                 }
             });
         } catch (e) {
             console.error("Erro ao parsear lista do localStorage:", e);
-            // Opcional: Limpar localStorage se estiver corrompido
-            // localStorage.removeItem('listaCompras');
         }
     }
 }
 
 // Função para adicionar um item na lista (DOM)
-function adicionarItemNaDOM(nome, quantidade, pego) {
+function adicionarItemNaDOM(nome, quantidade, pego, preco = '') {
     const lista = document.getElementById('listaCompras');
     const novoItem = document.createElement('li');
     if (pego) {
@@ -58,6 +59,7 @@ function adicionarItemNaDOM(nome, quantidade, pego) {
         <div class="item-info">
             <span class="item-name">${nome}</span>
             <input class="item-quantity" type="number" value="${quantidade}" min="1">
+            <input class="item-price" type="number" placeholder="Preço" value="${preco}" min="0" step="0.01">
             <span class="checkmark">✔️</span>
         </div>
         <div class="item-actions">
@@ -71,14 +73,23 @@ function adicionarItemNaDOM(nome, quantidade, pego) {
     // Adiciona event listeners aos elementos criados
     const inputQuantidade = novoItem.querySelector('.item-quantity');
     inputQuantidade.addEventListener('change', salvarLista); // Salva ao mudar quantidade
-    inputQuantidade.addEventListener('input', salvarLista); // Salva enquanto digita (opcional)
+    inputQuantidade.addEventListener('input', () => {
+        salvarLista();
+        calcularTotal(); // Atualiza o total automaticamente
+    });
+
+    const inputPreco = novoItem.querySelector('.item-price');
+    inputPreco.addEventListener('change', salvarLista); // Salva ao mudar preço
+    inputPreco.addEventListener('input', () => {
+        salvarLista();
+        calcularTotal(); // Atualiza o total automaticamente
+    });
 
     const btnStatus = novoItem.querySelector('.status-toggle');
     btnStatus.addEventListener('click', marcarComoPego);
 
     const btnRemover = novoItem.querySelector('.remover-item');
     btnRemover.addEventListener('click', removerItem);
-
 
     // Esconde o checkmark inicialmente se não estiver pego
     const checkmark = novoItem.querySelector('.checkmark');
@@ -87,13 +98,11 @@ function adicionarItemNaDOM(nome, quantidade, pego) {
     lista.appendChild(novoItem);
 }
 
-
 // Função principal para adicionar um item (chama a função DOM e salva)
-function adicionarItemNaLista(nome, quantidade = 1, pego = false) {
-    adicionarItemNaDOM(nome, quantidade, pego);
+function adicionarItemNaLista(nome, quantidade = 1, pego = false, preco = '') {
+    adicionarItemNaDOM(nome, quantidade, pego, preco);
     salvarLista(); // Salva a lista após adicionar um item
 }
-
 
 // Função para marcar o item como "já peguei" (agora usa event listener)
 function marcarComoPego(event) {
@@ -124,31 +133,54 @@ function removerItem(event) {
     const item = button.closest('li'); // Encontra o <li> pai
     if (!item) return; // Sai se não encontrar o item
 
-    // --- ALTERAÇÃO AQUI ---
-    // Mostra a caixa de diálogo de confirmação
     const confirmou = window.confirm("Tem certeza que deseja remover este item?");
-    // ----------------------
-
-    // Se o usuário clicou em "OK" (confirmou), então remove o item
     if (confirmou) {
         item.remove(); // Remove o item do HTML
         salvarLista(); // Salva a lista após remover o item
+
+        // Verifica se a lista está vazia e zera o total
+        if (document.querySelectorAll('#listaCompras li').length === 0) {
+            const valorTotalElement = document.getElementById('valorTotal');
+            valorTotalElement.textContent = `Valor Total: R$ 0,00`;
+        } else {
+            calcularTotal(); // Atualiza o total se ainda houver itens
+        }
+
         console.log("Item removido!");
     } else {
-        // Se o usuário clicou em "Cancelar", não faz nada
         console.log("Remoção cancelada.");
     }
+}
+
+// Função para calcular o valor total da compra
+function calcularTotal() {
+    let total = 0;
+    document.querySelectorAll('#listaCompras li').forEach(li => {
+        const quantidade = li.querySelector('.item-quantity').value;
+        const preco = li.querySelector('.item-price').value;
+
+        if (quantidade && preco) {
+            total += quantidade * preco;
+        }
+    });
+
+    const valorTotalElement = document.getElementById('valorTotal');
+    valorTotalElement.textContent = `Valor Total: R$ ${total.toFixed(2)}`;
 }
 
 // Evento para adicionar um novo item (botão principal)
 document.getElementById('adicionarItem').addEventListener('click', function() {
     const nomeItem = prompt("Digite o nome do item:");
-    // Verifica se o usuário digitou algo e não cancelou
     if (nomeItem && nomeItem.trim() !== "") {
-        adicionarItemNaLista(nomeItem.trim()); // Usa trim() para remover espaços extras
-    } else if (nomeItem !== null) { // Se não for nulo (cancelar), mas estiver vazio
+        adicionarItemNaLista(nomeItem.trim().toUpperCase());
+    } else if (nomeItem !== null) {
         alert("Por favor, digite um nome para o item.");
     }
 });
+
+// Evento para calcular o total
+document.getElementById('calcularTotal').addEventListener('click', calcularTotal);
+
+// Carrega a lista ao iniciar
 carregarLista();
- 
+

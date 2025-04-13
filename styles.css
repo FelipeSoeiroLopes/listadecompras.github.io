@@ -85,7 +85,7 @@ li:hover {
 }
 
 span.item-name {
-    font-size: 1.1rem;
+    font-size: 2rem; /* Aumente o valor para ajustar o tamanho da fonte */
     font-weight: 500;
     color: var(--text-color);
     flex-grow: 1;
@@ -247,7 +247,7 @@ li.pego .checkmark {
     }
 
     span.item-name {
-        font-size: 1rem;
+        font-size: 1.8rem;  /* aumenta a fonte */
     }
 
     input.item-quantity {
@@ -281,4 +281,12 @@ li.pego .checkmark {
         margin-top: 25px;
     }
 }
+
+/* --- ESTILIZAÇÃO DO VALOR TOTAL --- */
+#valorTotal {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
 /* --- FIM DO CSS --- */
