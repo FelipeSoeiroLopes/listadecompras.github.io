@@ -41,7 +41,7 @@ Você pode acessar e usar a versão online da lista de compras diretamente no se
 
 ## Como Usar
 
-1.  **Acesse a página**: Abra o link https://felipesoeirolopes.github.io/listadecompras.github.io/ no seu navegador.
+1.  **Acesse a página**: Abra o link https://felipesoeirolopes.github.io/lista-de-compras/ no seu navegador.
 2.  **Adicionar um item**:
     *   Clique no botão **"Adicionar Item"**.
     *   Digite o nome do item no prompt que aparecer e clique em "OK".
