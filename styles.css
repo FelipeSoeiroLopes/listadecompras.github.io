@@ -144,14 +144,15 @@ button:active {
 }
 
 #adicionarItem {
+    margin: 10px auto 20px auto; /* Espaçamento entre o título e o botão */
     background-color: var(--success-color);
     color: var(--text-light);
-    margin: 30px auto 20px auto;
     padding: 12px 25px;
     font-size: 1.1rem;
     border-radius: var(--border-radius-md);
     display: block;
     width: fit-content;
+    text-align: center;
 }
 
 #adicionarItem:hover {
