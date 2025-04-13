@@ -271,22 +271,29 @@ li.pego .checkmark {
     }
 
     input.item-quantity {
-        width: 80px;
-        padding: 8px;
+        width: 100px; /* Aumenta o tamanho do campo de quantidade */
+        padding: 10px; /* Aumenta o espaçamento interno */
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte */
+    }
+
+    input.item-price {
+        width: 100px; /* Aumenta o tamanho do campo de preço */
+        padding: 10px; /* Aumenta o espaçamento interno */
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte */
     }
 
     .item-actions {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px; /* Aumenta o espaçamento entre os botões */
         align-items: center;
         width: 100%;
     }
 
     .item-actions button {
         width: 100%;
-        max-width: 220px;
-        font-size: 0.95rem;
-        padding: 12px 10px;
+        max-width: 240px; /* Aumenta a largura máxima dos botões */
+        font-size: 1.1rem; /* Aumenta o tamanho da fonte dos botões */
+        padding: 14px 12px; /* Aumenta o espaçamento interno dos botões */
     }
 
     button.status-toggle {
@@ -295,9 +302,9 @@ li.pego .checkmark {
 
     #adicionarItem {
         width: 90%;
-        max-width: 220px;
-        font-size: 1rem;
-        padding: 12px 15px;
+        max-width: 240px; /* Aumenta a largura máxima do botão "Adicionar Item" */
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte */
+        padding: 14px 18px; /* Aumenta o espaçamento interno */
         margin-top: 25px;
     }
 }
