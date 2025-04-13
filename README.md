@@ -6,7 +6,7 @@ Uma lista de compras interativa e responsiva, desenvolvida com **HTML**, **CSS**
 
 Você pode acessar e usar a versão online da lista de compras diretamente no seu navegador:
 
-**https://felipesoeirolopes.github.io/listadecompras.github.io/**
+**https://felipesoeirolopes.github.io/lista-de-compras/**
 
 ## Funcionalidades
 
