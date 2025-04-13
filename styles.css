@@ -82,10 +82,12 @@ li:hover {
     gap: 15px;
     flex-grow: 1;
     min-width: 0;
+    text-align: left;
+    flex-direction: row; /* Alinha os elementos horizontalmente */
 }
 
 span.item-name {
-    font-size: 2rem; /* Aumente o valor para ajustar o tamanho da fonte */
+    font-size: 1rem; /* Aumente o valor para ajustar o tamanho da fonte */
     font-weight: 500;
     color: var(--text-color);
     flex-grow: 1;
@@ -105,6 +107,24 @@ input.item-quantity {
 }
 
 input.item-quantity:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.2);
+}
+
+input.item-price {
+    width: 80px; /* Ajuste o tamanho do campo de preço */
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    text-align: center;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    flex-shrink: 0;
+}
+
+input.item-price:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.2);
