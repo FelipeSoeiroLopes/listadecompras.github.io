@@ -310,6 +310,11 @@ li.pego .checkmark {
 }
 
 /* --- ESTILIZAÇÃO DO VALOR TOTAL --- */
+#calculadora {
+    margin-top: 20px;
+    text-align: center;
+}
+
 #valorTotal {
     font-size: 1.5rem;
     font-weight: bold;

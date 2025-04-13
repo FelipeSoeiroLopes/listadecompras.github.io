@@ -17,8 +17,8 @@ Você pode acessar e usar a versão online da lista de compras diretamente no se
 - **Melhorias Visuais**: O botão de status muda de cor e texto ("Não Pego" / "Pego"). Itens marcados como "pego" têm o texto riscado, opacidade reduzida e a borda do item fica verde.
 - **Salvamento automático**: Os itens são salvos automaticamente no `localStorage`, permanecendo disponíveis mesmo após fechar o navegador.
 - **Design responsivo**: A responsividade do site foi aprimorada, garantindo uma boa experiência em dispositivos móveis e desktops.
-- **Cálculo automático do valor total**: O valor total da compra é calculado automaticamente sempre que o preço ou a quantidade de um item é alterado.
-- **Zerar valor total ao remover todos os itens**: Quando todos os itens são removidos, o valor total é automaticamente zerado.
+- **Cálculo automático do valor total**: O valor total da compra é calculado automaticamente sempre que você aperta calcular total
+
 
 ## Novidades na Versão 9
 
@@ -26,8 +26,7 @@ Você pode acessar e usar a versão online da lista de compras diretamente no se
 - **Ajuste no Tamanho da Fonte**: O tamanho da fonte dos itens foi aumentado, tanto em dispositivos maiores quanto menores, para melhorar a legibilidade.
 - **Cálculo Automático do Valor Total**:
   - Adicionado um campo para o preço de cada item.
-  - O valor total da compra é calculado automaticamente sempre que o preço ou a quantidade de um item é alterado.
-- **Zerar Valor Total ao Remover Todos os Itens**: Quando todos os itens são removidos, o valor total é automaticamente atualizado para `R$ 0,00`.
+  - O valor total da compra é calculado automaticamente sempre que você aperta calcular total
 - **Melhorias na Responsividade**:
   - Em dispositivos menores, o tamanho da fonte dos itens foi ajustado para garantir uma boa experiência de leitura.
   - Ajustes adicionais no layout para melhorar a usabilidade em telas pequenas.

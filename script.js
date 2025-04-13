@@ -73,17 +73,11 @@ function adicionarItemNaDOM(nome, quantidade, pego, preco = '') {
     // Adiciona event listeners aos elementos criados
     const inputQuantidade = novoItem.querySelector('.item-quantity');
     inputQuantidade.addEventListener('change', salvarLista); // Salva ao mudar quantidade
-    inputQuantidade.addEventListener('input', () => {
-        salvarLista();
-        calcularTotal(); // Atualiza o total automaticamente
-    });
+    inputQuantidade.addEventListener('input', salvarLista); // Salva enquanto digita (opcional)
 
     const inputPreco = novoItem.querySelector('.item-price');
     inputPreco.addEventListener('change', salvarLista); // Salva ao mudar preço
-    inputPreco.addEventListener('input', () => {
-        salvarLista();
-        calcularTotal(); // Atualiza o total automaticamente
-    });
+    inputPreco.addEventListener('input', salvarLista); // Salva enquanto digita (opcional)
 
     const btnStatus = novoItem.querySelector('.status-toggle');
     btnStatus.addEventListener('click', marcarComoPego);
@@ -137,15 +131,6 @@ function removerItem(event) {
     if (confirmou) {
         item.remove(); // Remove o item do HTML
         salvarLista(); // Salva a lista após remover o item
-
-        // Verifica se a lista está vazia e zera o total
-        if (document.querySelectorAll('#listaCompras li').length === 0) {
-            const valorTotalElement = document.getElementById('valorTotal');
-            valorTotalElement.textContent = `Valor Total: R$ 0,00`;
-        } else {
-            calcularTotal(); // Atualiza o total se ainda houver itens
-        }
-
         console.log("Item removido!");
     } else {
         console.log("Remoção cancelada.");
